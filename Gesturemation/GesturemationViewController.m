@@ -34,6 +34,10 @@
 - (void) handleDoubleTapFrom: (UIGestureRecognizer *) recognizer;
 //pan
 - (void) setupPanGestureRecognizer;
+- (void) handlePanFrom: (UIPanGestureRecognizer *) recognizer;
+//pinch
+- (void) setupPinchGestureRecognizer;
+- (void) handlePinchFrom: (UIPinchGestureRecognizer *) recognizer;
 //calculate distance
 - (NSNumber *)calculateDistanceToScreenEdgeFor: (UISwipeGestureRecognizerDirection) swipeDirection;
 //orientation helpers
@@ -42,7 +46,7 @@
 @end
 
 @implementation GesturemationViewController
-@synthesize swipeLeftRecognizer, swipeRightRecognizer, swipeUpRecognizer, swipeDownRecognizer, tapRecognizer, doubleTapRecognizer, panRecognizer;
+@synthesize swipeLeftRecognizer, swipeRightRecognizer, swipeUpRecognizer, swipeDownRecognizer, tapRecognizer, doubleTapRecognizer, panRecognizer, pinchRecognizer;
 
 #pragma mark - View lifecycle
 
@@ -51,6 +55,7 @@
     [self setupGestureSwipeRecognizers];
     [self setupGestureTapRecognizers];
     [self setupPanGestureRecognizer];
+    [self setupPinchGestureRecognizer];
 }
 
 - (void)viewDidUnload {
@@ -103,6 +108,13 @@
     [moveMe addGestureRecognizer:panRecognizer];
 }
 
+- (void) setupPinchGestureRecognizer {
+    pinchRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self
+                                                                action:@selector(handlePinchFrom:)];
+    [pinchRecognizer setDelegate:self];
+    [[self view] addGestureRecognizer:pinchRecognizer];
+}
+
 - (UISwipeGestureRecognizer *) createSwipeGestureRecognizerForSwipeDirection: (UISwipeGestureRecognizerDirection) direction {
     UISwipeGestureRecognizer *generic = [[UISwipeGestureRecognizer alloc] initWithTarget:self 
                                                             action:@selector(handleSwipeFrom:)];
@@ -150,6 +162,16 @@
 
 - (void) handlePanFrom: (UIPanGestureRecognizer *) recognizer {
     [[recognizer view] setCenter:[recognizer locationInView:[self view]]];
+}
+
+- (void) handlePinchFrom: (UIPinchGestureRecognizer *) recognizer {
+    NSLog(@"pinching %f",[recognizer scale]);
+    CABasicAnimation *scale = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    [scale setToValue:[NSNumber numberWithFloat:[recognizer scale]]];
+    [scale setDuration:0.0];
+    [scale setRemovedOnCompletion:NO];
+    [scale setFillMode:kCAFillModeForwards];
+    [[moveMe layer] addAnimation:scale forKey:@"scaleing for realz"];
 }
 
 #pragma mark - Basic Animations

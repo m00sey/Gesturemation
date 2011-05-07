@@ -20,6 +20,8 @@
     UITapGestureRecognizer   *doubleTapRecognizer;
     
     UIPanGestureRecognizer   *panRecognizer;
+    
+    UIPinchGestureRecognizer *pinchRecognizer;
 }
 @property (nonatomic, retain) UISwipeGestureRecognizer *swipeLeftRecognizer;
 @property (nonatomic, retain) UISwipeGestureRecognizer *swipeRightRecognizer;
@@ -28,4 +30,5 @@
 @property (nonatomic, retain) UITapGestureRecognizer   *tapRecognizer;
 @property (nonatomic, retain) UITapGestureRecognizer   *doubleTapRecognizer;
 @property (nonatomic, retain) UIPanGestureRecognizer   *panRecognizer;
+@property (nonatomic, retain) UIPinchGestureRecognizer *pinchRecognizer;
 @end

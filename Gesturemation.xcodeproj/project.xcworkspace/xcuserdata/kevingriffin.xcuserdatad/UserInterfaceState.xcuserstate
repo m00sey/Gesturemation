@@ -1105,9 +1105,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>326493478.025208</real>
-		<string>{0, 1201}</string>
-		<string>{1123, 0}</string>
+		<real>326494349.43152702</real>
+		<string>{0, 1326}</string>
+		<string>{1320, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -1251,9 +1251,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>326493801.91952598</real>
-		<string>{5065, 1498}</string>
-		<string>{6210, 0}</string>
+		<real>326494989.05937499</real>
+		<string>{5864, 1466}</string>
+		<string>{7148, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -1747,7 +1747,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>177</integer>
+					<integer>56</integer>
 				</dict>
 			</array>
 		</dict>
@@ -2002,7 +2002,7 @@
 				<integer>194</integer>
 			</dict>
 			<key>NS.time</key>
-			<real>326493798.93745297</real>
+			<real>326494984.24845999</real>
 		</dict>
 		<dict>
 			<key>$classes</key>
@@ -2013,7 +2013,7 @@
 			<key>$classname</key>
 			<string>NSDate</string>
 		</dict>
-		<string>Today at 4:43 PM</string>
+		<string>Today at 5:03 PM</string>
 		<integer>106</integer>
 		<dict>
 			<key>$class</key>
@@ -2132,7 +2132,7 @@
 				<integer>204</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Developer/xcode4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITapGestureRecognizer.h</string>
+		<string>file://localhost/Users/kevingriffin/Development/Gesturemation/Gesturemation/en.lproj/GesturemationViewController.xib</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -2150,7 +2150,7 @@
 				<integer>206</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Developer/xcode4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIView.h</string>
+		<string>file://localhost/Developer/xcode4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITapGestureRecognizer.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -2168,7 +2168,7 @@
 				<integer>208</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/kevingriffin/Development/Gesturemation/Gesturemation/en.lproj/GesturemationViewController.xib</string>
+		<string>file://localhost/Developer/xcode4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIView.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -2285,7 +2285,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>391</integer>
+					<integer>390</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -2373,7 +2373,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>381</integer>
+					<integer>380</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -2381,7 +2381,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>390</integer>
+					<integer>389</integer>
 				</dict>
 			</array>
 		</dict>
@@ -3143,10 +3143,10 @@
 				</dict>
 			</array>
 		</dict>
-		<real>326493801.92189097</real>
-		<string>{5065, 1498}</string>
-		<string>{6210, 0}</string>
-		<string>-handlePanFrom:</string>
+		<real>326494989.06230599</real>
+		<string>{5864, 1466}</string>
+		<string>{7148, 0}</string>
+		<string>-handlePinchFrom:</string>
 		<string>Xcode.IDEKit.EditorDocument.SourceCode</string>
 		<dict>
 			<key>$class</key>
@@ -3617,7 +3617,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>359</integer>
+					<integer>358</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -3625,7 +3625,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>363</integer>
+					<integer>362</integer>
 				</dict>
 			</array>
 		</dict>
@@ -3698,7 +3698,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>356</integer>
+					<integer>355</integer>
 				</dict>
 			</array>
 		</dict>
@@ -3760,12 +3760,11 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>355</integer>
+					<integer>291</integer>
 				</dict>
 			</array>
 		</dict>
 		<string>Gesturemation</string>
-		<string>GesturemationViewController.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -3776,11 +3775,11 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>357</integer>
+					<integer>356</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>358</integer>
+					<integer>357</integer>
 				</dict>
 			</array>
 		</dict>
@@ -3826,15 +3825,15 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
+					<integer>359</integer>
+				</dict>
+				<dict>
+					<key>CF$UID</key>
 					<integer>360</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
 					<integer>361</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
-					<integer>362</integer>
 				</dict>
 			</array>
 			<key>NS.objects</key>
@@ -3864,6 +3863,10 @@
 			</dict>
 			<key>NS.keys</key>
 			<array>
+				<dict>
+					<key>CF$UID</key>
+					<integer>363</integer>
+				</dict>
 				<dict>
 					<key>CF$UID</key>
 					<integer>364</integer>
@@ -3900,10 +3903,6 @@
 					<key>CF$UID</key>
 					<integer>372</integer>
 				</dict>
-				<dict>
-					<key>CF$UID</key>
-					<integer>373</integer>
-				</dict>
 			</array>
 			<key>NS.objects</key>
 			<array>
@@ -3913,15 +3912,27 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
+					<integer>373</integer>
+				</dict>
+				<dict>
+					<key>CF$UID</key>
 					<integer>374</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>375</integer>
+					<integer>376</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
 					<integer>377</integer>
+				</dict>
+				<dict>
+					<key>CF$UID</key>
+					<integer>15</integer>
+				</dict>
+				<dict>
+					<key>CF$UID</key>
+					<integer>15</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -3933,19 +3944,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>15</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
 					<integer>379</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
-					<integer>15</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
-					<integer>380</integer>
 				</dict>
 			</array>
 		</dict>
@@ -3964,7 +3963,7 @@
 			<key>$class</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>376</integer>
+				<integer>375</integer>
 			</dict>
 			<key>NS.objects</key>
 			<array/>
@@ -3983,7 +3982,7 @@
 			<key>$class</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>376</integer>
+				<integer>375</integer>
 			</dict>
 			<key>NS.objects</key>
 			<array/>
@@ -4001,7 +4000,7 @@
 			<key>$class</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>376</integer>
+				<integer>375</integer>
 			</dict>
 			<key>NS.objects</key>
 			<array/>
@@ -4010,7 +4009,7 @@
 			<key>$class</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>376</integer>
+				<integer>375</integer>
 			</dict>
 			<key>NS.objects</key>
 			<array/>
@@ -4032,7 +4031,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>382</integer>
+					<integer>381</integer>
 				</dict>
 			</array>
 		</dict>
@@ -4046,15 +4045,15 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>383</integer>
+					<integer>382</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>385</integer>
+					<integer>384</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>387</integer>
+					<integer>386</integer>
 				</dict>
 			</array>
 		</dict>
@@ -4083,7 +4082,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>384</integer>
+					<integer>383</integer>
 				</dict>
 			</array>
 		</dict>
@@ -4113,7 +4112,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>386</integer>
+					<integer>385</integer>
 				</dict>
 			</array>
 		</dict>
@@ -4139,11 +4138,11 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>388</integer>
+					<integer>387</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>389</integer>
+					<integer>388</integer>
 				</dict>
 			</array>
 		</dict>
