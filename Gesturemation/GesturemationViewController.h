@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface GesturemationViewController : UIViewController {
-    
+    IBOutlet UIView *moveMe;
 }
 
 @end
