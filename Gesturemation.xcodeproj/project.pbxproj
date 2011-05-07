@@ -22,6 +22,7 @@
 		01433F401375A955003DF0DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01433F3E1375A955003DF0DE /* InfoPlist.strings */; };
 		01433F431375A955003DF0DE /* GesturemationTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 01433F421375A955003DF0DE /* GesturemationTests.h */; };
 		01433F451375A955003DF0DE /* GesturemationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01433F441375A955003DF0DE /* GesturemationTests.m */; };
+		01854BD81375AF9C00F383F8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01854BD71375AF9C00F383F8 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		01433F411375A955003DF0DE /* GesturemationTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GesturemationTests-Prefix.pch"; sourceTree = "<group>"; };
 		01433F421375A955003DF0DE /* GesturemationTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GesturemationTests.h; sourceTree = "<group>"; };
 		01433F441375A955003DF0DE /* GesturemationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GesturemationTests.m; sourceTree = "<group>"; };
+		01854BD71375AF9C00F383F8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01854BD81375AF9C00F383F8 /* QuartzCore.framework in Frameworks */,
 				01433F161375A955003DF0DE /* UIKit.framework in Frameworks */,
 				01433F181375A955003DF0DE /* Foundation.framework in Frameworks */,
 				01433F1A1375A955003DF0DE /* CoreGraphics.framework in Frameworks */,
@@ -103,6 +106,7 @@
 		01433F141375A955003DF0DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				01854BD71375AF9C00F383F8 /* QuartzCore.framework */,
 				01433F151375A955003DF0DE /* UIKit.framework */,
 				01433F171375A955003DF0DE /* Foundation.framework */,
 				01433F191375A955003DF0DE /* CoreGraphics.framework */,
@@ -447,6 +451,7 @@
 				01433F4A1375A955003DF0DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		01433F4B1375A955003DF0DE /* Build configuration list for PBXNativeTarget "GesturemationTests" */ = {
 			isa = XCConfigurationList;
@@ -455,6 +460,7 @@
 				01433F4D1375A955003DF0DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
