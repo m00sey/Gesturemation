@@ -11,8 +11,8 @@
 #define kStandardDuration 0.5f
 #define kStandardPortraitHeight 460.0f
 #define kStandardPortraitWidth 320.0f
-#define kStandardLandscapeHeight 320.0f
-#define kStandardLandscapeWidth 460.0f
+#define kStandardLandscapeHeight 300.0f
+#define kStandardLandscapeWidth 480.0f
 #define kStandardZero 0.0f
 #define kResetX 135.0f
 #define kResetY 205.0f
@@ -121,7 +121,11 @@
 }
 
 - (void) handleTapFrom: (UITapGestureRecognizer *) recognizer {
-    NSLog(@"%@",[[self view] gestureRecognizers]);
+    CABasicAnimation *fullRotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+    [fullRotation setFromValue:[NSNumber numberWithFloat:0]];
+    [fullRotation setToValue:[NSNumber numberWithFloat:((360*M_PI)/180)]];
+    [fullRotation setDuration:0.5f];
+    [[moveMe layer] addAnimation:fullRotation forKey:@"360"];
 }
 
 #pragma mark - Basic Animations

@@ -975,9 +975,9 @@
 		<string>PrimaryDocumentVisibleCharacterRange</string>
 		<string>HideAllIssues</string>
 		<string>PrimaryDocumentSelectedCharacterRange</string>
-		<real>326492255.48574501</real>
-		<string>{3608, 1408}</string>
-		<string>{6595, 0}</string>
+		<real>326492640.05696797</real>
+		<string>{4037, 1585}</string>
+		<string>{5140, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -1920,7 +1920,7 @@
 				<integer>188</integer>
 			</dict>
 			<key>NS.time</key>
-			<real>326492226.93304998</real>
+			<real>326492635.26889497</real>
 		</dict>
 		<dict>
 			<key>$classes</key>
@@ -1931,7 +1931,7 @@
 			<key>$classname</key>
 			<string>NSDate</string>
 		</dict>
-		<string>Today at 4:17 PM</string>
+		<string>Today at 4:23 PM</string>
 		<integer>106</integer>
 		<dict>
 			<key>$class</key>
@@ -3048,10 +3048,10 @@
 				</dict>
 			</array>
 		</dict>
-		<real>326492255.48805398</real>
-		<string>{3608, 1408}</string>
-		<string>{6595, 0}</string>
-		<string>-calculateDistanceToScreenEdgeFor:</string>
+		<real>326492640.05879301</real>
+		<string>{4037, 1585}</string>
+		<string>{5140, 0}</string>
+		<string>-handleTapFrom:</string>
 		<string>Xcode.IDEKit.EditorDocument.SourceCode</string>
 		<dict>
 			<key>$class</key>
