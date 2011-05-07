@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01433F161375A955003DF0DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01433F151375A955003DF0DE /* UIKit.framework */; };
+		01433F181375A955003DF0DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01433F171375A955003DF0DE /* Foundation.framework */; };
+		01433F1A1375A955003DF0DE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01433F191375A955003DF0DE /* CoreGraphics.framework */; };
+		01433F201375A955003DF0DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01433F1E1375A955003DF0DE /* InfoPlist.strings */; };
+		01433F231375A955003DF0DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 01433F221375A955003DF0DE /* main.m */; };
+		01433F261375A955003DF0DE /* GesturemationAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01433F251375A955003DF0DE /* GesturemationAppDelegate.m */; };
+		01433F291375A955003DF0DE /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01433F271375A955003DF0DE /* MainWindow.xib */; };
+		01433F2C1375A955003DF0DE /* GesturemationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01433F2B1375A955003DF0DE /* GesturemationViewController.m */; };
+		01433F2F1375A955003DF0DE /* GesturemationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01433F2D1375A955003DF0DE /* GesturemationViewController.xib */; };
+		01433F361375A955003DF0DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01433F151375A955003DF0DE /* UIKit.framework */; };
+		01433F371375A955003DF0DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01433F171375A955003DF0DE /* Foundation.framework */; };
+		01433F381375A955003DF0DE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01433F191375A955003DF0DE /* CoreGraphics.framework */; };
+		01433F401375A955003DF0DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01433F3E1375A955003DF0DE /* InfoPlist.strings */; };
+		01433F431375A955003DF0DE /* GesturemationTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 01433F421375A955003DF0DE /* GesturemationTests.h */; };
+		01433F451375A955003DF0DE /* GesturemationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01433F441375A955003DF0DE /* GesturemationTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		01433F391375A955003DF0DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 01433F081375A955003DF0DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 01433F101375A955003DF0DE;
+			remoteInfo = Gesturemation;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01433F111375A955003DF0DE /* Gesturemation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gesturemation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		01433F151375A955003DF0DE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		01433F171375A955003DF0DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		01433F191375A955003DF0DE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		01433F1D1375A955003DF0DE /* Gesturemation-Info.plist */ = {isa = PBXFileReference; path = "Gesturemation-Info.plist"; sourceTree = "<group>"; };
+		01433F1F1375A955003DF0DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		01433F211375A955003DF0DE /* Gesturemation-Prefix.pch */ = {isa = PBXFileReference; path = "Gesturemation-Prefix.pch"; sourceTree = "<group>"; };
+		01433F221375A955003DF0DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		01433F241375A955003DF0DE /* GesturemationAppDelegate.h */ = {isa = PBXFileReference; path = GesturemationAppDelegate.h; sourceTree = "<group>"; };
+		01433F251375A955003DF0DE /* GesturemationAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GesturemationAppDelegate.m; sourceTree = "<group>"; };
+		01433F281375A955003DF0DE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		01433F2A1375A955003DF0DE /* GesturemationViewController.h */ = {isa = PBXFileReference; path = GesturemationViewController.h; sourceTree = "<group>"; };
+		01433F2B1375A955003DF0DE /* GesturemationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GesturemationViewController.m; sourceTree = "<group>"; };
+		01433F2E1375A955003DF0DE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GesturemationViewController.xib; sourceTree = "<group>"; };
+		01433F351375A955003DF0DE /* GesturemationTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GesturemationTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		01433F3D1375A955003DF0DE /* GesturemationTests-Info.plist */ = {isa = PBXFileReference; path = "GesturemationTests-Info.plist"; sourceTree = "<group>"; };
+		01433F3F1375A955003DF0DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		01433F411375A955003DF0DE /* GesturemationTests-Prefix.pch */ = {isa = PBXFileReference; path = "GesturemationTests-Prefix.pch"; sourceTree = "<group>"; };
+		01433F421375A955003DF0DE /* GesturemationTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GesturemationTests.h; sourceTree = "<group>"; };
+		01433F441375A955003DF0DE /* GesturemationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GesturemationTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		01433F0E1375A955003DF0DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01433F161375A955003DF0DE /* UIKit.framework in Frameworks */,
+				01433F181375A955003DF0DE /* Foundation.framework in Frameworks */,
+				01433F1A1375A955003DF0DE /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01433F311375A955003DF0DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01433F361375A955003DF0DE /* UIKit.framework in Frameworks */,
+				01433F371375A955003DF0DE /* Foundation.framework in Frameworks */,
+				01433F381375A955003DF0DE /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01433F061375A955003DF0DE = {
+			isa = PBXGroup;
+			children = (
+				01433F1B1375A955003DF0DE /* Gesturemation */,
+				01433F3B1375A955003DF0DE /* GesturemationTests */,
+				01433F141375A955003DF0DE /* Frameworks */,
+				01433F121375A955003DF0DE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		01433F121375A955003DF0DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				01433F111375A955003DF0DE /* Gesturemation.app */,
+				01433F351375A955003DF0DE /* GesturemationTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		01433F141375A955003DF0DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01433F151375A955003DF0DE /* UIKit.framework */,
+				01433F171375A955003DF0DE /* Foundation.framework */,
+				01433F191375A955003DF0DE /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		01433F1B1375A955003DF0DE /* Gesturemation */ = {
+			isa = PBXGroup;
+			children = (
+				01433F241375A955003DF0DE /* GesturemationAppDelegate.h */,
+				01433F251375A955003DF0DE /* GesturemationAppDelegate.m */,
+				01433F271375A955003DF0DE /* MainWindow.xib */,
+				01433F2A1375A955003DF0DE /* GesturemationViewController.h */,
+				01433F2B1375A955003DF0DE /* GesturemationViewController.m */,
+				01433F2D1375A955003DF0DE /* GesturemationViewController.xib */,
+				01433F1C1375A955003DF0DE /* Supporting Files */,
+			);
+			path = Gesturemation;
+			sourceTree = "<group>";
+		};
+		01433F1C1375A955003DF0DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				01433F1D1375A955003DF0DE /* Gesturemation-Info.plist */,
+				01433F1E1375A955003DF0DE /* InfoPlist.strings */,
+				01433F211375A955003DF0DE /* Gesturemation-Prefix.pch */,
+				01433F221375A955003DF0DE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		01433F3B1375A955003DF0DE /* GesturemationTests */ = {
+			isa = PBXGroup;
+			children = (
+				01433F421375A955003DF0DE /* GesturemationTests.h */,
+				01433F441375A955003DF0DE /* GesturemationTests.m */,
+				01433F3C1375A955003DF0DE /* Supporting Files */,
+			);
+			path = GesturemationTests;
+			sourceTree = "<group>";
+		};
+		01433F3C1375A955003DF0DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				01433F3D1375A955003DF0DE /* GesturemationTests-Info.plist */,
+				01433F3E1375A955003DF0DE /* InfoPlist.strings */,
+				01433F411375A955003DF0DE /* GesturemationTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		01433F101375A955003DF0DE /* Gesturemation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01433F481375A955003DF0DE /* Build configuration list for PBXNativeTarget "Gesturemation" */;
+			buildPhases = (
+				01433F0D1375A955003DF0DE /* Sources */,
+				01433F0E1375A955003DF0DE /* Frameworks */,
+				01433F0F1375A955003DF0DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Gesturemation;
+			productName = Gesturemation;
+			productReference = 01433F111375A955003DF0DE /* Gesturemation.app */;
+			productType = "com.apple.product-type.application";
+		};
+		01433F341375A955003DF0DE /* GesturemationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01433F4B1375A955003DF0DE /* Build configuration list for PBXNativeTarget "GesturemationTests" */;
+			buildPhases = (
+				01433F301375A955003DF0DE /* Sources */,
+				01433F311375A955003DF0DE /* Frameworks */,
+				01433F321375A955003DF0DE /* Resources */,
+				01433F331375A955003DF0DE /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01433F3A1375A955003DF0DE /* PBXTargetDependency */,
+			);
+			name = GesturemationTests;
+			productName = GesturemationTests;
+			productReference = 01433F351375A955003DF0DE /* GesturemationTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		01433F081375A955003DF0DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Chariot Solutions LLC";
+			};
+			buildConfigurationList = 01433F0B1375A955003DF0DE /* Build configuration list for PBXProject "Gesturemation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 01433F061375A955003DF0DE;
+			productRefGroup = 01433F121375A955003DF0DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				01433F101375A955003DF0DE /* Gesturemation */,
+				01433F341375A955003DF0DE /* GesturemationTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		01433F0F1375A955003DF0DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01433F201375A955003DF0DE /* InfoPlist.strings in Resources */,
+				01433F291375A955003DF0DE /* MainWindow.xib in Resources */,
+				01433F2F1375A955003DF0DE /* GesturemationViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01433F321375A955003DF0DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01433F401375A955003DF0DE /* InfoPlist.strings in Resources */,
+				01433F431375A955003DF0DE /* GesturemationTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01433F331375A955003DF0DE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		01433F0D1375A955003DF0DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01433F231375A955003DF0DE /* main.m in Sources */,
+				01433F261375A955003DF0DE /* GesturemationAppDelegate.m in Sources */,
+				01433F2C1375A955003DF0DE /* GesturemationViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01433F301375A955003DF0DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01433F451375A955003DF0DE /* GesturemationTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		01433F3A1375A955003DF0DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 01433F101375A955003DF0DE /* Gesturemation */;
+			targetProxy = 01433F391375A955003DF0DE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		01433F1E1375A955003DF0DE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01433F1F1375A955003DF0DE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		01433F271375A955003DF0DE /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01433F281375A955003DF0DE /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		01433F2D1375A955003DF0DE /* GesturemationViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01433F2E1375A955003DF0DE /* en */,
+			);
+			name = GesturemationViewController.xib;
+			sourceTree = "<group>";
+		};
+		01433F3E1375A955003DF0DE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01433F3F1375A955003DF0DE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		01433F461375A955003DF0DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		01433F471375A955003DF0DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		01433F491375A955003DF0DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Gesturemation/Gesturemation-Prefix.pch";
+				INFOPLIST_FILE = "Gesturemation/Gesturemation-Info.plist";
+				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		01433F4A1375A955003DF0DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Gesturemation/Gesturemation-Prefix.pch";
+				INFOPLIST_FILE = "Gesturemation/Gesturemation-Info.plist";
+				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		01433F4C1375A955003DF0DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Gesturemation.app/Gesturemation";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GesturemationTests/GesturemationTests-Prefix.pch";
+				INFOPLIST_FILE = "GesturemationTests/GesturemationTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		01433F4D1375A955003DF0DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Gesturemation.app/Gesturemation";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GesturemationTests/GesturemationTests-Prefix.pch";
+				INFOPLIST_FILE = "GesturemationTests/GesturemationTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		01433F0B1375A955003DF0DE /* Build configuration list for PBXProject "Gesturemation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01433F461375A955003DF0DE /* Debug */,
+				01433F471375A955003DF0DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01433F481375A955003DF0DE /* Build configuration list for PBXNativeTarget "Gesturemation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01433F491375A955003DF0DE /* Debug */,
+				01433F4A1375A955003DF0DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		01433F4B1375A955003DF0DE /* Build configuration list for PBXNativeTarget "GesturemationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01433F4C1375A955003DF0DE /* Debug */,
+				01433F4D1375A955003DF0DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 01433F081375A955003DF0DE /* Project object */;
+}
