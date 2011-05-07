@@ -8,25 +8,43 @@
 
 #import "GesturemationViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#define kStandardDuration 0.5f
+#define kStandardPortraitHeight 460.0f
+#define kStandardPortraitWidth 320.0f
+#define kStandardLandscapeHeight 320.0f
+#define kStandardLandscapeWidth 460.0f
+#define kStandardZero 0.0f
+#define kResetX 135.0f
+#define kResetY 205.0f
+#define kResetHeight 90.0f
+#define kResetWidth 90.0f
 
 @interface GesturemationViewController ()
+//animations
 - (void) moveViewOnY: (UIView *) moving toPosition: (NSNumber *) position;
 - (void) moveViewOnX: (UIView *) moving toPosition: (NSNumber *) position;
 - (CABasicAnimation *) createBasicAnimationWithKeyPath: (NSString *) keyPath andPosition: (NSNumber *) position;
-
+//swipes
 - (void) setupGestureSwipeRecognizers;
+- (void) setupGestureTapRecognizers;
 - (UISwipeGestureRecognizer *) createSwipeGestureRecognizerForSwipeDirection: (UISwipeGestureRecognizerDirection) direction;
 - (void) handleSwipeFrom: (UIGestureRecognizer *) recognizer;
+//calculate distance
+- (NSNumber *)calculateDistanceToScreenEdgeFor: (UISwipeGestureRecognizerDirection) swipeDirection;
+//orientation helpers
+- (CGFloat) getHeightForCurrentOrientation;
+- (CGFloat) getWidthForCurrentOrientation;
 @end
 
 @implementation GesturemationViewController
-@synthesize swipeLeftRecognizer, swipeRightRecognizer, swipeUpRecognizer, swipeDownRecognizer;
+@synthesize swipeLeftRecognizer, swipeRightRecognizer, swipeUpRecognizer, swipeDownRecognizer, tapRecognizer;
 
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupGestureSwipeRecognizers];
+    [self setupGestureTapRecognizers];
 }
 
 - (void)viewDidUnload {
@@ -60,6 +78,16 @@
 
 }
 
+- (void) setupGestureTapRecognizers {
+    tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self 
+                                                            action:@selector(handleTapFrom:)];
+    [tapRecognizer setDelegate:self];
+    [tapRecognizer setNumberOfTapsRequired:1];
+    [tapRecognizer setNumberOfTouchesRequired:1];
+    [[self view] addGestureRecognizer:tapRecognizer];
+    [tapRecognizer release];
+}
+
 - (UISwipeGestureRecognizer *) createSwipeGestureRecognizerForSwipeDirection: (UISwipeGestureRecognizerDirection) direction {
     UISwipeGestureRecognizer *generic = [[UISwipeGestureRecognizer alloc] initWithTarget:self 
                                                             action:@selector(handleSwipeFrom:)];
@@ -71,17 +99,29 @@
 #pragma mark - Handle Gesture Recognizer Actions
 - (void) handleSwipeFrom: (UISwipeGestureRecognizer *) recognizer {
     if ([recognizer direction] == UISwipeGestureRecognizerDirectionLeft) {
-        NSLog(@"swipe left");
+        NSLog(@"Swipe left");
+        [self moveViewOnX:moveMe 
+               toPosition:[self calculateDistanceToScreenEdgeFor:UISwipeGestureRecognizerDirectionLeft]];
     }
     if ([recognizer direction] == UISwipeGestureRecognizerDirectionRight) {
         NSLog(@"swipe right");
+        [self moveViewOnX:moveMe 
+               toPosition:[self calculateDistanceToScreenEdgeFor:UISwipeGestureRecognizerDirectionRight]];
     }
     if ([recognizer direction] == UISwipeGestureRecognizerDirectionUp) {
         NSLog(@"swipe up");
+        [self moveViewOnY:moveMe 
+               toPosition:[self calculateDistanceToScreenEdgeFor:UISwipeGestureRecognizerDirectionUp]];
     }
     if ([recognizer direction] == UISwipeGestureRecognizerDirectionDown) {
         NSLog(@"swipe down");
+        [self moveViewOnY:moveMe 
+               toPosition:[self calculateDistanceToScreenEdgeFor:UISwipeGestureRecognizerDirectionDown]];
     }
+}
+
+- (void) handleTapFrom: (UITapGestureRecognizer *) recognizer {
+    NSLog(@"%@",[[self view] gestureRecognizers]);
 }
 
 #pragma mark - Basic Animations
@@ -93,8 +133,7 @@
     [[moving layer] addAnimation:move forKey:@"move along y"];
 }
 
-- (void) moveViewOnX: (UIView *) moving toPosition: (NSNumber *) position{
-    
+- (void) moveViewOnX: (UIView *) moving toPosition: (NSNumber *) position{  
     CABasicAnimation *move = [self createBasicAnimationWithKeyPath:@"transform.translation.x" 
                                                        andPosition:position];
     [[moving layer] addAnimation:move forKey:@"move along x"];
@@ -104,10 +143,43 @@
     CABasicAnimation *move = [CABasicAnimation animationWithKeyPath:keyPath];
     [move setFromValue:[NSNumber numberWithFloat:0.0f]];
     [move setToValue:position];
-    [move setRemovedOnCompletion:YES];
+    [move setRemovedOnCompletion:NO];
     [move setFillMode:kCAFillModeForwards];
-    
+    [move setDuration:kStandardDuration];
+    [move setAutoreverses:YES];
+
     return move;
+}
+
+#pragma mark - Calculate distance
+
+- (NSNumber *)calculateDistanceToScreenEdgeFor: (UISwipeGestureRecognizerDirection) swipeDirection {
+    
+    if (swipeDirection == UISwipeGestureRecognizerDirectionLeft) {
+        return [NSNumber numberWithFloat:0-[moveMe frame].origin.x];
+    } else if (swipeDirection == UISwipeGestureRecognizerDirectionRight) {
+        return [NSNumber numberWithFloat:(([self getWidthForCurrentOrientation] - [moveMe frame].origin.x) - [moveMe frame].size.width)];
+    } else if (swipeDirection == UISwipeGestureRecognizerDirectionUp) {
+        return [NSNumber numberWithFloat:0-[moveMe frame].origin.y];
+    } else {
+        //UISwipeGestureRecognizerDirectionDown
+        return [NSNumber numberWithFloat:(([self getHeightForCurrentOrientation] - [moveMe frame].origin.y) - [moveMe frame].size.height)];
+    }
+    return [NSNumber numberWithFloat:0.0f];
+}
+
+- (CGFloat) getHeightForCurrentOrientation {
+    if (UIDeviceOrientationIsPortrait([[UIDevice currentDevice] orientation])) {
+        return kStandardPortraitHeight;
+    }
+    return kStandardLandscapeHeight;
+}
+
+- (CGFloat) getWidthForCurrentOrientation {
+    if (UIDeviceOrientationIsPortrait([[UIDevice currentDevice] orientation])) {
+        return kStandardPortraitWidth;
+    }
+    return kStandardLandscapeWidth;
 }
 
 #pragma mark - Memory Management
