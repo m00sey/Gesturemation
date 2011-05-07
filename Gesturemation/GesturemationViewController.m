@@ -29,6 +29,9 @@
 - (void) setupGestureTapRecognizers;
 - (UISwipeGestureRecognizer *) createSwipeGestureRecognizerForSwipeDirection: (UISwipeGestureRecognizerDirection) direction;
 - (void) handleSwipeFrom: (UIGestureRecognizer *) recognizer;
+// taps
+- (void) handleTapFrom: (UIGestureRecognizer *) recognizer;
+- (void) handleDoubleTapFrom: (UIGestureRecognizer *) recognizer;
 //calculate distance
 - (NSNumber *)calculateDistanceToScreenEdgeFor: (UISwipeGestureRecognizerDirection) swipeDirection;
 //orientation helpers
@@ -62,19 +65,15 @@
     UIView * view = [self view];
     swipeLeftRecognizer = [self createSwipeGestureRecognizerForSwipeDirection:UISwipeGestureRecognizerDirectionLeft];
     [view addGestureRecognizer:swipeLeftRecognizer];
-    [swipeLeftRecognizer release];
 
     swipeRightRecognizer = [self createSwipeGestureRecognizerForSwipeDirection:UISwipeGestureRecognizerDirectionRight];
     [view addGestureRecognizer:swipeRightRecognizer];
-    [swipeRightRecognizer release];
 
     swipeDownRecognizer = [self createSwipeGestureRecognizerForSwipeDirection:UISwipeGestureRecognizerDirectionDown];
     [view addGestureRecognizer:swipeDownRecognizer];
-    [swipeDownRecognizer release];
 
     swipeUpRecognizer = [self createSwipeGestureRecognizerForSwipeDirection:UISwipeGestureRecognizerDirectionUp];
     [view addGestureRecognizer:swipeUpRecognizer];
-    [swipeUpRecognizer release];
 
 }
 
@@ -85,7 +84,13 @@
     [tapRecognizer setNumberOfTapsRequired:1];
     [tapRecognizer setNumberOfTouchesRequired:1];
     [[self view] addGestureRecognizer:tapRecognizer];
-    [tapRecognizer release];
+    
+    doubleTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self 
+                                                                  action:@selector(handleDoubleTapFrom:)];
+    [doubleTapRecognizer setDelegate:self];
+    [doubleTapRecognizer setNumberOfTapsRequired:2];
+    [doubleTapRecognizer setNumberOfTouchesRequired:1];
+    [[self view] addGestureRecognizer:doubleTapRecognizer];
 }
 
 - (UISwipeGestureRecognizer *) createSwipeGestureRecognizerForSwipeDirection: (UISwipeGestureRecognizerDirection) direction {
@@ -121,11 +126,16 @@
 }
 
 - (void) handleTapFrom: (UITapGestureRecognizer *) recognizer {
+    
     CABasicAnimation *fullRotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
     [fullRotation setFromValue:[NSNumber numberWithFloat:0]];
     [fullRotation setToValue:[NSNumber numberWithFloat:((360*M_PI)/180)]];
     [fullRotation setDuration:0.5f];
     [[moveMe layer] addAnimation:fullRotation forKey:@"360"];
+}
+
+- (void) handleDoubleTapFrom: (UITapGestureRecognizer *) recognizer {
+    NSLog(@"reset");
 }
 
 #pragma mark - Basic Animations
@@ -188,6 +198,12 @@
 
 #pragma mark - Memory Management
 - (void)dealloc {
+    [swipeUpRecognizer release];
+    [swipeDownRecognizer release];
+    [swipeLeftRecognizer release];
+    [swipeRightRecognizer release];
+    [tapRecognizer release];
+    [doubleTapRecognizer release];
     [super dealloc];
 }
 

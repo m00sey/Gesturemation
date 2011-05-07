@@ -15,7 +15,9 @@
     UISwipeGestureRecognizer *swipeRightRecognizer;
     UISwipeGestureRecognizer *swipeUpRecognizer;
     UISwipeGestureRecognizer *swipeDownRecognizer;
+    
     UITapGestureRecognizer   *tapRecognizer;
+    UITapGestureRecognizer   *doubleTapRecognizer;
 }
 @property (nonatomic, retain) UISwipeGestureRecognizer *swipeLeftRecognizer;
 @property (nonatomic, retain) UISwipeGestureRecognizer *swipeRightRecognizer;
