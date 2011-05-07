@@ -39,20 +39,20 @@
 		01433F151375A955003DF0DE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		01433F171375A955003DF0DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		01433F191375A955003DF0DE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		01433F1D1375A955003DF0DE /* Gesturemation-Info.plist */ = {isa = PBXFileReference; path = "Gesturemation-Info.plist"; sourceTree = "<group>"; };
+		01433F1D1375A955003DF0DE /* Gesturemation-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Gesturemation-Info.plist"; sourceTree = "<group>"; };
 		01433F1F1375A955003DF0DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		01433F211375A955003DF0DE /* Gesturemation-Prefix.pch */ = {isa = PBXFileReference; path = "Gesturemation-Prefix.pch"; sourceTree = "<group>"; };
+		01433F211375A955003DF0DE /* Gesturemation-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gesturemation-Prefix.pch"; sourceTree = "<group>"; };
 		01433F221375A955003DF0DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		01433F241375A955003DF0DE /* GesturemationAppDelegate.h */ = {isa = PBXFileReference; path = GesturemationAppDelegate.h; sourceTree = "<group>"; };
+		01433F241375A955003DF0DE /* GesturemationAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GesturemationAppDelegate.h; sourceTree = "<group>"; };
 		01433F251375A955003DF0DE /* GesturemationAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GesturemationAppDelegate.m; sourceTree = "<group>"; };
 		01433F281375A955003DF0DE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		01433F2A1375A955003DF0DE /* GesturemationViewController.h */ = {isa = PBXFileReference; path = GesturemationViewController.h; sourceTree = "<group>"; };
+		01433F2A1375A955003DF0DE /* GesturemationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GesturemationViewController.h; sourceTree = "<group>"; };
 		01433F2B1375A955003DF0DE /* GesturemationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GesturemationViewController.m; sourceTree = "<group>"; };
 		01433F2E1375A955003DF0DE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GesturemationViewController.xib; sourceTree = "<group>"; };
 		01433F351375A955003DF0DE /* GesturemationTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GesturemationTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		01433F3D1375A955003DF0DE /* GesturemationTests-Info.plist */ = {isa = PBXFileReference; path = "GesturemationTests-Info.plist"; sourceTree = "<group>"; };
+		01433F3D1375A955003DF0DE /* GesturemationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GesturemationTests-Info.plist"; sourceTree = "<group>"; };
 		01433F3F1375A955003DF0DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		01433F411375A955003DF0DE /* GesturemationTests-Prefix.pch */ = {isa = PBXFileReference; path = "GesturemationTests-Prefix.pch"; sourceTree = "<group>"; };
+		01433F411375A955003DF0DE /* GesturemationTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GesturemationTests-Prefix.pch"; sourceTree = "<group>"; };
 		01433F421375A955003DF0DE /* GesturemationTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GesturemationTests.h; sourceTree = "<group>"; };
 		01433F441375A955003DF0DE /* GesturemationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GesturemationTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
