@@ -38,6 +38,9 @@
 //pinch
 - (void) setupPinchGestureRecognizer;
 - (void) handlePinchFrom: (UIPinchGestureRecognizer *) recognizer;
+//rotate
+- (void) setupRotationGestureRecognizer;
+- (void) handleRotationFrom: (UIRotationGestureRecognizer *) recognizer;
 //calculate distance
 - (NSNumber *)calculateDistanceToScreenEdgeFor: (UISwipeGestureRecognizerDirection) swipeDirection;
 //orientation helpers
@@ -46,7 +49,7 @@
 @end
 
 @implementation GesturemationViewController
-@synthesize swipeLeftRecognizer, swipeRightRecognizer, swipeUpRecognizer, swipeDownRecognizer, tapRecognizer, doubleTapRecognizer, panRecognizer, pinchRecognizer;
+@synthesize swipeLeftRecognizer, swipeRightRecognizer, swipeUpRecognizer, swipeDownRecognizer, tapRecognizer, doubleTapRecognizer, panRecognizer, pinchRecognizer, rotationRecognizer;
 
 #pragma mark - View lifecycle
 
@@ -56,6 +59,7 @@
     [self setupGestureTapRecognizers];
     [self setupPanGestureRecognizer];
     [self setupPinchGestureRecognizer];
+    [self setupRotationGestureRecognizer];
 }
 
 - (void)viewDidUnload {
@@ -113,6 +117,13 @@
                                                                 action:@selector(handlePinchFrom:)];
     [pinchRecognizer setDelegate:self];
     [[self view] addGestureRecognizer:pinchRecognizer];
+}
+
+- (void) setupRotationGestureRecognizer {
+    rotationRecognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self
+                                                                action:@selector(handleRotationFrom:)];
+    [rotationRecognizer setDelegate:self];
+    [[self view] addGestureRecognizer:rotationRecognizer];
 }
 
 - (UISwipeGestureRecognizer *) createSwipeGestureRecognizerForSwipeDirection: (UISwipeGestureRecognizerDirection) direction {
@@ -174,6 +185,10 @@
         [scale setFillMode:kCAFillModeForwards];
         [[moveMe layer] addAnimation:scale forKey:@"scaleing for realz"];
     }
+}
+
+- (void) handleRotationFrom:(UIRotationGestureRecognizer *)recognizer {
+    NSLog(@"rotating %f", [recognizer rotation]);
 }
 
 #pragma mark - Basic Animations
@@ -242,6 +257,9 @@
     [swipeRightRecognizer release];
     [tapRecognizer release];
     [doubleTapRecognizer release];
+    [panRecognizer release];
+    [pinchRecognizer release];
+    [rotationRecognizer release];
     [super dealloc];
 }
 

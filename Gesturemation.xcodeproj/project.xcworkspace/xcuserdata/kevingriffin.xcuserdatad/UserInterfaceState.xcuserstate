@@ -1105,9 +1105,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>326494349.43152702</real>
-		<string>{0, 1326}</string>
-		<string>{1320, 0}</string>
+		<real>326495425.27692699</real>
+		<string>{3, 1460}</string>
+		<string>{1456, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -1251,9 +1251,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>326495220.21939498</real>
-		<string>{6523, 1460}</string>
-		<string>{6939, 366}</string>
+		<real>326495621.19144899</real>
+		<string>{1211, 1234}</string>
+		<string>{2360, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -1747,7 +1747,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>56</integer>
+					<integer>177</integer>
 				</dict>
 			</array>
 		</dict>
@@ -2002,7 +2002,7 @@
 				<integer>194</integer>
 			</dict>
 			<key>NS.time</key>
-			<real>326495216.213579</real>
+			<real>326495616.36873698</real>
 		</dict>
 		<dict>
 			<key>$classes</key>
@@ -2013,7 +2013,7 @@
 			<key>$classname</key>
 			<string>NSDate</string>
 		</dict>
-		<string>Today at 5:06 PM</string>
+		<string>Today at 5:13 PM</string>
 		<integer>106</integer>
 		<dict>
 			<key>$class</key>
@@ -3152,10 +3152,10 @@
 				</dict>
 			</array>
 		</dict>
-		<real>326495220.22146899</real>
-		<string>{6523, 1460}</string>
-		<string>{6939, 366}</string>
-		<string>-handlePinchFrom:</string>
+		<real>326495621.19420302</real>
+		<string>{1211, 1234}</string>
+		<string>{2360, 0}</string>
+		<string>-viewDidLoad</string>
 		<string>Xcode.IDEKit.EditorDocument.SourceCode</string>
 		<dict>
 			<key>$class</key>
