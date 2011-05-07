@@ -166,12 +166,14 @@
 
 - (void) handlePinchFrom: (UIPinchGestureRecognizer *) recognizer {
     NSLog(@"pinching %f",[recognizer scale]);
-    CABasicAnimation *scale = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-    [scale setToValue:[NSNumber numberWithFloat:[recognizer scale]]];
-    [scale setDuration:0.0];
-    [scale setRemovedOnCompletion:NO];
-    [scale setFillMode:kCAFillModeForwards];
-    [[moveMe layer] addAnimation:scale forKey:@"scaleing for realz"];
+    if ([recognizer state] == UIGestureRecognizerStateEnded) {
+        CABasicAnimation *scale = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+        [scale setToValue:[NSNumber numberWithFloat:[recognizer scale]]];
+        [scale setDuration:0.0];
+        [scale setRemovedOnCompletion:NO];
+        [scale setFillMode:kCAFillModeForwards];
+        [[moveMe layer] addAnimation:scale forKey:@"scaleing for realz"];
+    }
 }
 
 #pragma mark - Basic Animations
