@@ -905,9 +905,9 @@
 		<string>PrimaryDocumentVisibleCharacterRange</string>
 		<string>HideAllIssues</string>
 		<string>PrimaryDocumentSelectedCharacterRange</string>
-		<real>326479240.35809499</real>
-		<string>{0, 989}</string>
-		<string>{689, 0}</string>
+		<real>326479289.64089698</real>
+		<string>{0, 901}</string>
+		<string>{422, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -1456,7 +1456,7 @@
 				<integer>150</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/kevingriffin/Development/Gesturemation/Gesturemation/GesturemationViewController.h</string>
+		<string>file://localhost/Users/kevingriffin/Development/Gesturemation/Gesturemation/en.lproj/GesturemationViewController.xib</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -1474,7 +1474,7 @@
 				<integer>152</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/kevingriffin/Development/Gesturemation/Gesturemation/en.lproj/GesturemationViewController.xib</string>
+		<string>file://localhost/Users/kevingriffin/Development/Gesturemation/Gesturemation/GesturemationViewController.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -2622,10 +2622,10 @@
 				</dict>
 			</array>
 		</dict>
-		<real>326479240.36005098</real>
-		<string>{0, 989}</string>
-		<string>{689, 0}</string>
-		<string>-shouldAutorotateToInterfaceOrientation:</string>
+		<real>326479289.64356101</real>
+		<string>{0, 901}</string>
+		<string>{422, 0}</string>
+		<string>-viewDidLoad</string>
 		<string>Xcode.IDEKit.EditorDocument.SourceCode</string>
 		<dict>
 			<key>$class</key>
