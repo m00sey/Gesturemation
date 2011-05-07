@@ -189,6 +189,13 @@
 
 - (void) handleRotationFrom:(UIRotationGestureRecognizer *)recognizer {
     NSLog(@"rotating %f", [recognizer rotation]);
+    CABasicAnimation *rotate = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+    [rotate setFromValue:[NSNumber numberWithFloat:0]];
+    [rotate setToValue:[NSNumber numberWithFloat:[recognizer rotation]]];
+    [rotate setDuration:0.0f];
+    [rotate setRemovedOnCompletion:NO];
+    [rotate setFillMode:kCAFillModeForwards];
+    [[moveMe layer] addAnimation:rotate forKey:@"rotate"];
 }
 
 #pragma mark - Basic Animations
