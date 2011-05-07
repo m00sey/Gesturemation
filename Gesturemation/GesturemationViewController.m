@@ -13,14 +13,20 @@
 - (void) moveViewOnY: (UIView *) moving toPosition: (NSNumber *) position;
 - (void) moveViewOnX: (UIView *) moving toPosition: (NSNumber *) position;
 - (CABasicAnimation *) createBasicAnimationWithKeyPath: (NSString *) keyPath andPosition: (NSNumber *) position;
+
+- (void) setupGestureSwipeRecognizers;
+- (UISwipeGestureRecognizer *) createSwipeGestureRecognizerForSwipeDirection: (UISwipeGestureRecognizerDirection) direction;
+- (void) handleSwipeFrom: (UIGestureRecognizer *) recognizer;
 @end
 
 @implementation GesturemationViewController
+@synthesize swipeLeftRecognizer, swipeRightRecognizer, swipeUpRecognizer, swipeDownRecognizer;
 
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupGestureSwipeRecognizers];
 }
 
 - (void)viewDidUnload {
@@ -31,6 +37,51 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return YES;
+}
+
+#pragma mark - Gesture Recognizer set up
+- (void) setupGestureSwipeRecognizers {
+    UIView * view = [self view];
+    swipeLeftRecognizer = [self createSwipeGestureRecognizerForSwipeDirection:UISwipeGestureRecognizerDirectionLeft];
+    [view addGestureRecognizer:swipeLeftRecognizer];
+    [swipeLeftRecognizer release];
+
+    swipeRightRecognizer = [self createSwipeGestureRecognizerForSwipeDirection:UISwipeGestureRecognizerDirectionRight];
+    [view addGestureRecognizer:swipeRightRecognizer];
+    [swipeRightRecognizer release];
+
+    swipeDownRecognizer = [self createSwipeGestureRecognizerForSwipeDirection:UISwipeGestureRecognizerDirectionDown];
+    [view addGestureRecognizer:swipeDownRecognizer];
+    [swipeDownRecognizer release];
+
+    swipeUpRecognizer = [self createSwipeGestureRecognizerForSwipeDirection:UISwipeGestureRecognizerDirectionUp];
+    [view addGestureRecognizer:swipeUpRecognizer];
+    [swipeUpRecognizer release];
+
+}
+
+- (UISwipeGestureRecognizer *) createSwipeGestureRecognizerForSwipeDirection: (UISwipeGestureRecognizerDirection) direction {
+    UISwipeGestureRecognizer *generic = [[UISwipeGestureRecognizer alloc] initWithTarget:self 
+                                                            action:@selector(handleSwipeFrom:)];
+    [generic setDelegate:self];
+    [generic setDirection:direction];
+    return generic;
+}
+
+#pragma mark - Handle Gesture Recognizer Actions
+- (void) handleSwipeFrom: (UISwipeGestureRecognizer *) recognizer {
+    if ([recognizer direction] == UISwipeGestureRecognizerDirectionLeft) {
+        NSLog(@"swipe left");
+    }
+    if ([recognizer direction] == UISwipeGestureRecognizerDirectionRight) {
+        NSLog(@"swipe right");
+    }
+    if ([recognizer direction] == UISwipeGestureRecognizerDirectionUp) {
+        NSLog(@"swipe up");
+    }
+    if ([recognizer direction] == UISwipeGestureRecognizerDirectionDown) {
+        NSLog(@"swipe down");
+    }
 }
 
 #pragma mark - Basic Animations
