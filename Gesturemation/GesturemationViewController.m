@@ -26,12 +26,14 @@
 - (CABasicAnimation *) createBasicAnimationWithKeyPath: (NSString *) keyPath andPosition: (NSNumber *) position;
 //swipes
 - (void) setupGestureSwipeRecognizers;
-- (void) setupGestureTapRecognizers;
 - (UISwipeGestureRecognizer *) createSwipeGestureRecognizerForSwipeDirection: (UISwipeGestureRecognizerDirection) direction;
 - (void) handleSwipeFrom: (UIGestureRecognizer *) recognizer;
 // taps
+- (void) setupGestureTapRecognizers;
 - (void) handleTapFrom: (UIGestureRecognizer *) recognizer;
 - (void) handleDoubleTapFrom: (UIGestureRecognizer *) recognizer;
+//pan
+- (void) setupPanGestureRecognizer;
 //calculate distance
 - (NSNumber *)calculateDistanceToScreenEdgeFor: (UISwipeGestureRecognizerDirection) swipeDirection;
 //orientation helpers
@@ -40,7 +42,7 @@
 @end
 
 @implementation GesturemationViewController
-@synthesize swipeLeftRecognizer, swipeRightRecognizer, swipeUpRecognizer, swipeDownRecognizer, tapRecognizer;
+@synthesize swipeLeftRecognizer, swipeRightRecognizer, swipeUpRecognizer, swipeDownRecognizer, tapRecognizer, doubleTapRecognizer, panRecognizer;
 
 #pragma mark - View lifecycle
 
@@ -48,6 +50,7 @@
     [super viewDidLoad];
     [self setupGestureSwipeRecognizers];
     [self setupGestureTapRecognizers];
+    [self setupPanGestureRecognizer];
 }
 
 - (void)viewDidUnload {
@@ -93,6 +96,13 @@
     [[self view] addGestureRecognizer:doubleTapRecognizer];
 }
 
+- (void) setupPanGestureRecognizer {
+    panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self
+                                                            action:@selector(handlePanFrom:)];
+    [panRecognizer setDelegate:self];
+    [moveMe addGestureRecognizer:panRecognizer];
+}
+
 - (UISwipeGestureRecognizer *) createSwipeGestureRecognizerForSwipeDirection: (UISwipeGestureRecognizerDirection) direction {
     UISwipeGestureRecognizer *generic = [[UISwipeGestureRecognizer alloc] initWithTarget:self 
                                                             action:@selector(handleSwipeFrom:)];
@@ -136,6 +146,10 @@
 
 - (void) handleDoubleTapFrom: (UITapGestureRecognizer *) recognizer {
     NSLog(@"reset");
+}
+
+- (void) handlePanFrom: (UIPanGestureRecognizer *) recognizer {
+    [[recognizer view] setCenter:[recognizer locationInView:[self view]]];
 }
 
 #pragma mark - Basic Animations
