@@ -1494,9 +1494,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>326592892.01842898</real>
-		<string>{11116, 911}</string>
-		<string>{6211, 0}</string>
+		<real>326592995.03473699</real>
+		<string>{7929, 1556}</string>
+		<string>{8652, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -4164,10 +4164,10 @@
 				</dict>
 			</array>
 		</dict>
-		<real>326592892.02071297</real>
-		<string>{11116, 911}</string>
-		<string>{6211, 0}</string>
-		<string>-handleSwipeFrom:</string>
+		<real>326592995.03747398</real>
+		<string>{7929, 1556}</string>
+		<string>{8652, 0}</string>
+		<string>-handleRotationFrom:</string>
 		<string>Xcode.IDEKit.EditorDocument.SourceCode</string>
 		<dict>
 			<key>$class</key>

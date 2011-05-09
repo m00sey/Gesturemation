@@ -200,7 +200,6 @@
 }
 
 - (void) handleRotationFrom:(UIRotationGestureRecognizer *)recognizer {
-    NSLog(@"rotating %f", [recognizer rotation]);
     CABasicAnimation *rotate = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
     [rotate setFromValue:[NSNumber numberWithFloat:0]];
     [rotate setToValue:[NSNumber numberWithFloat:[recognizer rotation]]];
