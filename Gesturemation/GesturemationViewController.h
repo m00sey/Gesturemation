@@ -26,6 +26,8 @@
     UIPinchGestureRecognizer        *pinchRecognizer;
     
     UIRotationGestureRecognizer     *rotationRecognizer;
+    
+    CGFloat lastAngle;
 }
 @property (nonatomic, retain) UISwipeGestureRecognizer          *swipeLeftRecognizer;
 @property (nonatomic, retain) UISwipeGestureRecognizer          *swipeRightRecognizer;

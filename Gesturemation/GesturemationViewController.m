@@ -16,8 +16,8 @@
 #define kStandardZero 0.0f
 #define kResetX 160.0f
 #define kResetY 230.0f
-#define kResetHeight 90.0f
-#define kResetWidth 90.0f
+#define kResetHeight 50.0f
+#define kResetWidth 50.0f
 
 @interface GesturemationViewController ()
 //animations
@@ -25,6 +25,7 @@
 - (void) moveViewOnX: (UIView *) moving toPosition: (NSNumber *) position;
 - (CABasicAnimation *) createBasicAnimationWithKeyPath: (NSString *) keyPath andPosition: (NSNumber *) position;
 - (CABasicAnimation *) createSimpleRotationAnimation;
+- (void) reset;
 - (CABasicAnimation *) createSimpleScaleAnimation;
 //swipes
 - (void) setupGestureSwipeRecognizers;
@@ -64,6 +65,7 @@
     [self setupPanGestureRecognizer];
     [self setupPinchGestureRecognizer];
     [self setupRotationGestureRecognizer];
+    NSLog(@"%f %f", [moveMe frame].size.height, [moveMe frame].size.width);
 }
 
 - (void)viewDidUnload {
@@ -119,6 +121,7 @@
                                                                 action:@selector(handleLongPressFrom:)];
     [longPressRecognizer setDelegate:self];
     [[self view] addGestureRecognizer:longPressRecognizer];
+    
 }
 
 - (void) setupPanGestureRecognizer {
@@ -171,13 +174,20 @@
 }
 
 - (void) handleTapFrom: (UITapGestureRecognizer *) recognizer {
-    
     [[moveMe layer] addAnimation:[self createSimpleRotationAnimation] forKey:@"360"];
 }
 
 - (void) handleTwoFingerTapFrom:(UIGestureRecognizer *)recognizer {
-    [moveMe setCenter:CGPointMake(kResetX, kResetY)];
-    [[moveMe layer] removeAllAnimations];
+    [UIView animateWithDuration:0.5 animations:^{ 
+        //jaja I should roate back
+        [[moveMe layer] removeAllAnimations];
+        [[moveMe layer] setFrame:CGRectMake([moveMe frame].origin.x, [moveMe frame].origin.y, kResetWidth, kResetHeight)];
+    } completion:^(BOOL finished){
+        [UIView animateWithDuration:0.5 animations:^{ 
+            [moveMe setCenter:CGPointMake(kResetX, kResetY)];
+        } completion:^(BOOL finished){
+        }];
+    }];
 }
 
 - (void) handleDoubleTapFrom: (UITapGestureRecognizer *) recognizer {
@@ -215,9 +225,10 @@
 }
 
 - (void) handleRotationFrom:(UIRotationGestureRecognizer *)recognizer {
+    lastAngle = [recognizer rotation];
     CABasicAnimation *rotate = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
     [rotate setFromValue:[NSNumber numberWithFloat:0]];
-    [rotate setToValue:[NSNumber numberWithFloat:[recognizer rotation]]];
+    [rotate setToValue:[NSNumber numberWithFloat:lastAngle]];
     [rotate setDuration:0.0f];
     [rotate setRemovedOnCompletion:NO];
     [rotate setFillMode:kCAFillModeForwards];
@@ -266,6 +277,11 @@
     return scale;
 }
 
+- (void) reset {
+    [moveMe setCenter:CGPointMake(kResetX, kResetY)];
+    [[moveMe layer] removeAllAnimations];
+}
+
 #pragma mark - Calculate distance
 
 - (NSNumber *)calculateDistanceToScreenEdgeFor: (UISwipeGestureRecognizerDirection) swipeDirection {
@@ -306,6 +322,7 @@
     [tapRecognizer release];
     [doubleTapRecognizer release];
     [twoFingerTapRecognizer release];
+    [longPressRecognizer release];
     [panRecognizer release];
     [pinchRecognizer release];
     [rotationRecognizer release];

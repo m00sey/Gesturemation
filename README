@@ -6,6 +6,7 @@ While the wife's away... I'll write iOS? O_o
 * Single Tap - rotate 360
 * Double Tap - fades out
 * Pinch/Zoom - scales the square - not too hot right now
-* Rotate - rotates the sqaure - again not too hot
+* Rotate - rotates the square - again not too hot
 * Two finger tap - reset
 * Tap and hold the square to drag it around
+* Long press - group animation - scale and rotate
