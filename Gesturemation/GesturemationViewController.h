@@ -11,29 +11,31 @@
 @interface GesturemationViewController : UIViewController <UIGestureRecognizerDelegate> {
     IBOutlet UIView *moveMe;
     
-    UISwipeGestureRecognizer *swipeLeftRecognizer;
-    UISwipeGestureRecognizer *swipeRightRecognizer;
-    UISwipeGestureRecognizer *swipeUpRecognizer;
-    UISwipeGestureRecognizer *swipeDownRecognizer;
+    UISwipeGestureRecognizer        *swipeLeftRecognizer;
+    UISwipeGestureRecognizer        *swipeRightRecognizer;
+    UISwipeGestureRecognizer        *swipeUpRecognizer;
+    UISwipeGestureRecognizer        *swipeDownRecognizer;
     
-    UITapGestureRecognizer   *tapRecognizer;
-    UITapGestureRecognizer   *doubleTapRecognizer;
-    UITapGestureRecognizer   *twoFingerTapRecognizer;
+    UITapGestureRecognizer          *tapRecognizer;
+    UITapGestureRecognizer          *doubleTapRecognizer;
+    UITapGestureRecognizer          *twoFingerTapRecognizer;
+    UILongPressGestureRecognizer    *longPressRecognizer;
     
-    UIPanGestureRecognizer   *panRecognizer;
+    UIPanGestureRecognizer          *panRecognizer;
     
-    UIPinchGestureRecognizer *pinchRecognizer;
+    UIPinchGestureRecognizer        *pinchRecognizer;
     
-    UIRotationGestureRecognizer *rotationRecognizer;
+    UIRotationGestureRecognizer     *rotationRecognizer;
 }
-@property (nonatomic, retain) UISwipeGestureRecognizer *swipeLeftRecognizer;
-@property (nonatomic, retain) UISwipeGestureRecognizer *swipeRightRecognizer;
-@property (nonatomic, retain) UISwipeGestureRecognizer *swipeUpRecognizer;
-@property (nonatomic, retain) UISwipeGestureRecognizer *swipeDownRecognizer;
-@property (nonatomic, retain) UITapGestureRecognizer   *tapRecognizer;
-@property (nonatomic, retain) UITapGestureRecognizer   *doubleTapRecognizer;
-@property (nonatomic, retain) UITapGestureRecognizer   *twoFingerTapRecognizer;
-@property (nonatomic, retain) UIPanGestureRecognizer   *panRecognizer;
-@property (nonatomic, retain) UIPinchGestureRecognizer *pinchRecognizer;
-@property (nonatomic, retain) UIRotationGestureRecognizer *rotationRecognizer;
+@property (nonatomic, retain) UISwipeGestureRecognizer          *swipeLeftRecognizer;
+@property (nonatomic, retain) UISwipeGestureRecognizer          *swipeRightRecognizer;
+@property (nonatomic, retain) UISwipeGestureRecognizer          *swipeUpRecognizer;
+@property (nonatomic, retain) UISwipeGestureRecognizer          *swipeDownRecognizer;
+@property (nonatomic, retain) UITapGestureRecognizer            *tapRecognizer;
+@property (nonatomic, retain) UITapGestureRecognizer            *doubleTapRecognizer;
+@property (nonatomic, retain) UITapGestureRecognizer            *twoFingerTapRecognizer;
+@property (nonatomic, retain) UILongPressGestureRecognizer      *longPressRecognizer;
+@property (nonatomic, retain) UIPanGestureRecognizer            *panRecognizer;
+@property (nonatomic, retain) UIPinchGestureRecognizer          *pinchRecognizer;
+@property (nonatomic, retain) UIRotationGestureRecognizer       *rotationRecognizer;
 @end

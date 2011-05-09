@@ -24,6 +24,8 @@
 - (void) moveViewOnY: (UIView *) moving toPosition: (NSNumber *) position;
 - (void) moveViewOnX: (UIView *) moving toPosition: (NSNumber *) position;
 - (CABasicAnimation *) createBasicAnimationWithKeyPath: (NSString *) keyPath andPosition: (NSNumber *) position;
+- (CABasicAnimation *) createSimpleRotationAnimation;
+- (CABasicAnimation *) createSimpleScaleAnimation;
 //swipes
 - (void) setupGestureSwipeRecognizers;
 - (UISwipeGestureRecognizer *) createSwipeGestureRecognizerForSwipeDirection: (UISwipeGestureRecognizerDirection) direction;
@@ -33,6 +35,7 @@
 - (void) handleTapFrom: (UIGestureRecognizer *) recognizer;
 - (void) handleTwoFingerTapFrom: (UIGestureRecognizer *) recognizer;
 - (void) handleDoubleTapFrom: (UIGestureRecognizer *) recognizer;
+- (void) handleLongPressFrom: (UIGestureRecognizer *) recognizer;
 //pan
 - (void) setupPanGestureRecognizer;
 - (void) handlePanFrom: (UIPanGestureRecognizer *) recognizer;
@@ -50,7 +53,7 @@
 @end
 
 @implementation GesturemationViewController
-@synthesize swipeLeftRecognizer, swipeRightRecognizer, swipeUpRecognizer, swipeDownRecognizer, tapRecognizer, doubleTapRecognizer, twoFingerTapRecognizer, panRecognizer, pinchRecognizer, rotationRecognizer;
+@synthesize swipeLeftRecognizer, swipeRightRecognizer, swipeUpRecognizer, swipeDownRecognizer, tapRecognizer, doubleTapRecognizer, twoFingerTapRecognizer, longPressRecognizer, panRecognizer, pinchRecognizer, rotationRecognizer;
 
 #pragma mark - View lifecycle
 
@@ -106,11 +109,16 @@
     [[self view] addGestureRecognizer:doubleTapRecognizer];
     
     twoFingerTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self 
-                                                            action:@selector(handleTwoFingerTapFrom:)];
+                                                                    action:@selector(handleTwoFingerTapFrom:)];
     [twoFingerTapRecognizer setDelegate:self];
     [twoFingerTapRecognizer setNumberOfTapsRequired:1];
     [twoFingerTapRecognizer setNumberOfTouchesRequired:2];
     [[self view] addGestureRecognizer:twoFingerTapRecognizer];
+    
+    longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self 
+                                                                action:@selector(handleLongPressFrom:)];
+    [longPressRecognizer setDelegate:self];
+    [[self view] addGestureRecognizer:longPressRecognizer];
 }
 
 - (void) setupPanGestureRecognizer {
@@ -164,11 +172,7 @@
 
 - (void) handleTapFrom: (UITapGestureRecognizer *) recognizer {
     
-    CABasicAnimation *fullRotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
-    [fullRotation setFromValue:[NSNumber numberWithFloat:0]];
-    [fullRotation setToValue:[NSNumber numberWithFloat:((360*M_PI)/180)]];
-    [fullRotation setDuration:0.5f];
-    [[moveMe layer] addAnimation:fullRotation forKey:@"360"];
+    [[moveMe layer] addAnimation:[self createSimpleRotationAnimation] forKey:@"360"];
 }
 
 - (void) handleTwoFingerTapFrom:(UIGestureRecognizer *)recognizer {
@@ -186,6 +190,17 @@
 
 - (void) handlePanFrom: (UIPanGestureRecognizer *) recognizer {
     [[recognizer view] setCenter:[recognizer locationInView:[self view]]];
+}
+
+- (void) handleLongPressFrom:(UIGestureRecognizer *)recognizer {
+    if ([recognizer state] == UIGestureRecognizerStateBegan) {
+        CAAnimationGroup *animationGroup = [CAAnimationGroup animation];
+        [animationGroup setAnimations:[NSArray arrayWithObjects:[self createSimpleRotationAnimation],
+                                       [self createSimpleScaleAnimation], nil]];
+        [animationGroup setDuration:1.0f];
+        [animationGroup setAutoreverses:YES];
+        [[moveMe layer] addAnimation:animationGroup forKey:@"group action"];
+    }
 }
 
 - (void) handlePinchFrom: (UIPinchGestureRecognizer *) recognizer {
@@ -234,6 +249,21 @@
     [move setAutoreverses:YES];
 
     return move;
+}
+
+- (CABasicAnimation *) createSimpleRotationAnimation {
+    CABasicAnimation *fullRotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+    [fullRotation setFromValue:[NSNumber numberWithFloat:0]];
+    [fullRotation setToValue:[NSNumber numberWithFloat:((360*M_PI)/180)]];
+    [fullRotation setDuration:0.5f];
+    return fullRotation;
+}
+
+- (CABasicAnimation *) createSimpleScaleAnimation {
+    CABasicAnimation *scale = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    [scale setToValue:[NSNumber numberWithFloat:10.0f]];
+    [scale setDuration:1.0f];
+    return scale;
 }
 
 #pragma mark - Calculate distance
