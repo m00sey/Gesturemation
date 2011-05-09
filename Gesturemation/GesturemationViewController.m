@@ -14,8 +14,8 @@
 #define kStandardLandscapeHeight 300.0f
 #define kStandardLandscapeWidth 480.0f
 #define kStandardZero 0.0f
-#define kResetX 135.0f
-#define kResetY 205.0f
+#define kResetX 160.0f
+#define kResetY 230.0f
 #define kResetHeight 90.0f
 #define kResetWidth 90.0f
 
@@ -31,6 +31,7 @@
 // taps
 - (void) setupGestureTapRecognizers;
 - (void) handleTapFrom: (UIGestureRecognizer *) recognizer;
+- (void) handleTwoFingerTapFrom: (UIGestureRecognizer *) recognizer;
 - (void) handleDoubleTapFrom: (UIGestureRecognizer *) recognizer;
 //pan
 - (void) setupPanGestureRecognizer;
@@ -49,7 +50,7 @@
 @end
 
 @implementation GesturemationViewController
-@synthesize swipeLeftRecognizer, swipeRightRecognizer, swipeUpRecognizer, swipeDownRecognizer, tapRecognizer, doubleTapRecognizer, panRecognizer, pinchRecognizer, rotationRecognizer;
+@synthesize swipeLeftRecognizer, swipeRightRecognizer, swipeUpRecognizer, swipeDownRecognizer, tapRecognizer, doubleTapRecognizer, twoFingerTapRecognizer, panRecognizer, pinchRecognizer, rotationRecognizer;
 
 #pragma mark - View lifecycle
 
@@ -95,7 +96,7 @@
     [tapRecognizer setDelegate:self];
     [tapRecognizer setNumberOfTapsRequired:1];
     [tapRecognizer setNumberOfTouchesRequired:1];
-    [[self view] addGestureRecognizer:tapRecognizer];
+    [moveMe addGestureRecognizer:tapRecognizer];
     
     doubleTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self 
                                                                   action:@selector(handleDoubleTapFrom:)];
@@ -103,6 +104,13 @@
     [doubleTapRecognizer setNumberOfTapsRequired:2];
     [doubleTapRecognizer setNumberOfTouchesRequired:1];
     [[self view] addGestureRecognizer:doubleTapRecognizer];
+    
+    twoFingerTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self 
+                                                            action:@selector(handleTwoFingerTapFrom:)];
+    [twoFingerTapRecognizer setDelegate:self];
+    [twoFingerTapRecognizer setNumberOfTapsRequired:1];
+    [twoFingerTapRecognizer setNumberOfTouchesRequired:2];
+    [[self view] addGestureRecognizer:twoFingerTapRecognizer];
 }
 
 - (void) setupPanGestureRecognizer {
@@ -137,22 +145,18 @@
 #pragma mark - Handle Gesture Recognizer Actions
 - (void) handleSwipeFrom: (UISwipeGestureRecognizer *) recognizer {
     if ([recognizer direction] == UISwipeGestureRecognizerDirectionLeft) {
-        NSLog(@"Swipe left");
         [self moveViewOnX:moveMe 
                toPosition:[self calculateDistanceToScreenEdgeFor:UISwipeGestureRecognizerDirectionLeft]];
     }
     if ([recognizer direction] == UISwipeGestureRecognizerDirectionRight) {
-        NSLog(@"swipe right");
         [self moveViewOnX:moveMe 
                toPosition:[self calculateDistanceToScreenEdgeFor:UISwipeGestureRecognizerDirectionRight]];
     }
     if ([recognizer direction] == UISwipeGestureRecognizerDirectionUp) {
-        NSLog(@"swipe up");
         [self moveViewOnY:moveMe 
                toPosition:[self calculateDistanceToScreenEdgeFor:UISwipeGestureRecognizerDirectionUp]];
     }
     if ([recognizer direction] == UISwipeGestureRecognizerDirectionDown) {
-        NSLog(@"swipe down");
         [self moveViewOnY:moveMe 
                toPosition:[self calculateDistanceToScreenEdgeFor:UISwipeGestureRecognizerDirectionDown]];
     }
@@ -167,8 +171,17 @@
     [[moveMe layer] addAnimation:fullRotation forKey:@"360"];
 }
 
+- (void) handleTwoFingerTapFrom:(UIGestureRecognizer *)recognizer {
+    [moveMe setCenter:CGPointMake(kResetX, kResetY)];
+    [[moveMe layer] removeAllAnimations];
+}
+
 - (void) handleDoubleTapFrom: (UITapGestureRecognizer *) recognizer {
-    NSLog(@"reset");
+    CABasicAnimation *fadey = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    [fadey setToValue:[NSNumber numberWithFloat:0.1f]];
+    [fadey setDuration:1.0f];
+    [fadey setAutoreverses:YES];
+    [[moveMe layer] addAnimation:fadey forKey:@"fadey"];    
 }
 
 - (void) handlePanFrom: (UIPanGestureRecognizer *) recognizer {
@@ -176,7 +189,6 @@
 }
 
 - (void) handlePinchFrom: (UIPinchGestureRecognizer *) recognizer {
-    NSLog(@"pinching %f",[recognizer scale]);
     if ([recognizer state] == UIGestureRecognizerStateEnded) {
         CABasicAnimation *scale = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
         [scale setToValue:[NSNumber numberWithFloat:[recognizer scale]]];
@@ -264,6 +276,7 @@
     [swipeRightRecognizer release];
     [tapRecognizer release];
     [doubleTapRecognizer release];
+    [twoFingerTapRecognizer release];
     [panRecognizer release];
     [pinchRecognizer release];
     [rotationRecognizer release];

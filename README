@@ -1,3 +1,11 @@
 Simple examples of using CABasicAnimation and gestures.
 
 While the wife's away... I'll write iOS? O_o
+
+* Swipe up/down/left/right - moves the square in the swipe direction
+* Single Tap - rotate 360
+* Double Tap - fades out
+* Pinch/Zoom - scales the square - not too hot right now
+* Rotate - rotates the sqaure - again not too hot
+* Two finger tap - reset
+* Tap and hold the square to drag it around
